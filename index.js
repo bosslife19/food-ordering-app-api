@@ -42,17 +42,17 @@ app.use(express.static(path.join(__dirname, '/public/build')))
 // })
 
 app.use('/api/admin/', AdminRoutes)
-app.use('/api/menu', menuRoutes )
-app.use('/api/order', OrderRoutes)
+app.use('/api/menu/', menuRoutes )
+app.use('/api/order/', OrderRoutes)
 
-app.get('/api/key', (req, res)=>{
+app.get('/api/key/', (req, res)=>{
     try {
         res.status(200).json(process.env.PAYSTACK_KEY)
     } catch (error) {
         res.status(500).json(error)
     }
 })
-app.use('/api/mail', (req, res)=>{
+app.use('/api/mail/', (req, res)=>{
     const {email, name} = req.body
     const transport = nodemailer.createTransport({
         service: 'Gmail',
