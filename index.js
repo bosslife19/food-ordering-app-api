@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 const express = require('express')
-const cors = require('cors')
+
 // const multer = require('multer')
 const app = express();
-app.use(cors());
+
+
 const menuRoutes = require('./router/menuRoutes')
 const OrderRoutes = require('./router/OrderRoutes')
 const AdminRoutes = require('./router/AdminRoutes')
