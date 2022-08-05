@@ -80,8 +80,6 @@ app.use('/api/mail', (req, res)=>{
     transport.verify((error, success) => {
         if(error){
             console.log(error)
-        }else{
-            console.log('server reading')
         }
     })
     transport.sendMail(options,function (err, info){
@@ -89,7 +87,7 @@ app.use('/api/mail', (req, res)=>{
             console.log(err)
         }
         else{
-            console.log('Sent'+ info.response)
+            
             res.status(200).json('message sent')
 
         }
