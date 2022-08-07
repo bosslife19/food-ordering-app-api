@@ -5,6 +5,7 @@ const express = require('express')
 const app = express();
 
 
+
 const menuRoutes = require('./router/menuRoutes')
 const OrderRoutes = require('./router/OrderRoutes')
 const AdminRoutes = require('./router/AdminRoutes')
@@ -14,7 +15,7 @@ const nodemailer = require('nodemailer');
 const SMTPConnection = require('nodemailer/lib/smtp-connection');
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost:27017/Food-App')
+mongoose.connect( 'mongodb://localhost:27017/Food-App')
 
 .then(app.listen(process.env.PORT || 4000, console.log('server started')))
 
